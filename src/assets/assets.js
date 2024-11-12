@@ -1,3 +1,7 @@
+// Centralized registry for icon assets
+// for Centralized Imports, where components can import `assets` instead of each icon individually,
+// reducing redundant imports and improving code organization.
+
 import history_icon from './history_icon.png'
 import menu_icon from './menu_icon.png'
 import plus_icon from './plus_icon.png'

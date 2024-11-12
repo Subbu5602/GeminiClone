@@ -16,12 +16,14 @@ const Main = () => {
 
   return (
     <div className="main">
+      {/* nav bar */}
       <div className="nav">
         <p>Gemini</p>
         <img src={assets.user_icon} alt="User Icon" />
       </div>
       <div className="main-container">
         {!showResult ? (
+          // when no result is shown
           <>
             <div className="greet">
               <p>
@@ -29,6 +31,7 @@ const Main = () => {
               </p>
               <p>How can I Help you Today ?</p>
             </div>
+            {/* show cards after greeting */}
             <div className="cards">
               <div className="card">
                 <p>Suggest me some cute dog pictures</p>
@@ -51,10 +54,12 @@ const Main = () => {
         ) : (
           <div className="result">
             <div className="result-title">
+              {/* for question said by user */}
               <img src={assets.user_icon} alt="User Icon" />
               <p>{recentPrompt}</p>
             </div>
             <div className="result-data">
+              {/* gemini icon answering */}
               <img src={assets.gemini_icon} alt="Gemini Icon" />
               {loading ? (
                 <div className="loader">
@@ -63,7 +68,7 @@ const Main = () => {
                   <hr />
                 </div>
               ) : (
-                <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+                <p dangerouslySetInnerHTML={{ __html: resultData }}></p> // Insert raw HTML directly into the DOM inside the <p> tag
               )}
             </div>
           </div>
@@ -72,10 +77,17 @@ const Main = () => {
         <div className="main-bottom">
           <div className="search-box">
             <input
+              /* Capture user input and update the input state in context */
               onChange={(e) => setInput(e.target.value)}
               value={input}
               type="text"
               placeholder="Enter a Prompt Here"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  onSent(); // Trigger onSent() if the Enter key is pressed
+                  setInput(''); //make input field empty after pressing enter
+                }
+              }}
             />
             <div>
               <img src={assets.gallery_icon} alt="Gallery Icon" />
