@@ -1,7 +1,9 @@
 # Gemini Clone
 
 
-## This project is a Gemini Clone built using ReactJS and Vite, integrating the Gemini API to deliver AI-powered conversational experiences. It simulates an advanced chatbot interface with real-time responses, designed for seamless interaction and efficient data handling.
+## This project is a Gemini Clone built using ReactJS and Vite, integrating the Gemini API to deliver AI-powered conversational experiences. 
+
+## It simulates an advanced chatbot interface with real-time responses, designed for seamless interaction and efficient data handling.
 
 
 ## Features:
